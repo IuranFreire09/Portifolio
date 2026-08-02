@@ -1,0 +1,170 @@
+/* Carrega o Tailwind CSS */
+@import "tailwindcss";
+
+/* Variáveis globais de cores */
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+/* Disponibiliza as variáveis para o Tailwind */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Rolagem suave entre as seções */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilo geral da página */
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Evita que o cabeçalho cubra os títulos das seções */
+section {
+  scroll-margin-top: 5rem;
+}
+
+/* Entrada utilizada pelos elementos do Hero */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fade-in-up 600ms ease-out forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+/* Estado inicial dos elementos revelados durante a rolagem */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 700ms ease-out,
+    transform 700ms ease-out;
+  transition-delay: var(--animation-delay, 0s);
+}
+
+/* Estado aplicado quando o elemento entra na tela */
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Interação reutilizável de links e botões */
+.animated-link {
+  display: inline-block;
+  transition:
+    transform 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+.animated-link:hover {
+  transform: scale(1.04);
+}
+
+.animated-link:active {
+  transform: scale(0.96);
+}
+
+/* Animação de entrada do Hero */
+@keyframes fade-in-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Desativa movimentos quando solicitado pelo sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-in-up,
+  .reveal-up {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  .animated-link {
+    transition: none;
+  }
+
+  .animated-link:hover,
+  .animated-link:active {
+    transform: none;
+  }
+}
+
+/* Base compartilhada pelas três luzes da aurora */
+.aurora-layer {
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 9999px;
+  filter: blur(110px);
+  opacity: 0.22;
+  will-change: transform;
+}
+
+/* Camada ciano principal */
+.aurora-layer-one {
+  top: -16rem;
+  left: 5%;
+  background: #22d3ee;
+  animation: aurora-one 14s ease-in-out infinite alternate;
+}
+
+/* Camada azul secundária */
+.aurora-layer-two {
+  top: 10%;
+  right: -16rem;
+  background: #2563eb;
+  animation: aurora-two 18s ease-in-out infinite alternate;
+}
+
+/* Camada roxa para adicionar profundidade */
+.aurora-layer-three {
+  bottom: -20rem;
+  left: 35%;
+  background: #7c3aed;
+  animation: aurora-three 20s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-one {
+  to {
+    transform: translate(10rem, 8rem) scale(1.15);
+  }
+}
+
+@keyframes aurora-two {
+  to {
+    transform: translate(-12rem, 6rem) scale(0.9);
+  }
+}
+
+@keyframes aurora-three {
+  to {
+    transform: translate(6rem, -10rem) scale(1.1);
+  }
+}
+
+/* Mantém a aurora parada quando movimentos são reduzidos */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-layer {
+    animation: none;
+  }
+
+  
+}
