@@ -10,6 +10,8 @@ export type Project = {
   key: ProjectKey;
   technologies: string[];
   featured: boolean;
+  image?: string;
+  projectUrl?: string;
 };
 
 // Aqui permanecem apenas informações que não precisam de tradução.
@@ -31,11 +33,17 @@ export const projects: Project[] = [
     key: "inventoryDashboard",
     technologies: ["Power BI", "Excel", "Power Query"],
     featured: false,
+    image: "/projects/dashboard-estoque.png",
+    projectUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiMzI5MGEzMDYtNTI4My00NDRjLWFhYTMtZGZjNDc0NjIzMGI2IiwidCI6IjE5NjNjNWNlLWZjYjUtNDE0Zi1hNWJlLTM4MjM3NTgwMjg0YSIsImMiOjN9",
   },
   {
     id: 3,
     key: "productionDashboard",
     technologies: ["Power BI", "Excel", "DAX"],
     featured: false,
+    image: "/projects/dashboard-performance-producao.png",
+    projectUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiY2EyZjllM2QtNDE5Yi00NDhiLTk3MzMtZTI1YjA1ZThmMTVjIiwidCI6IjE5NjNjNWNlLWZjYjUtNDE0Zi1hNWJlLTM4MjM3NTgwMjg0YSIsImMiOjN9",
   },
 ];

@@ -2,6 +2,8 @@
 import { AnimatedLink } from "@/components/animations/AnimatedLink";
 import { FadeIn } from "@/components/animations/FadeIn";
 import DotField from "@/components/react-bits/DotField";
+import { GradientText } from "@/components/react-bits/GradientText";
+import { SpecularLink } from "@/components/react-bits/SpecularLink";
 
 import type { pt } from "@/dictionaries/pt";
 
@@ -37,7 +39,9 @@ export function Hero({ content }: HeroProps) {
         <FadeIn delay={0.1}>
           <h1 className="mt-4 text-5xl font-bold tracking-tight sm:text-7xl">
             {content.firstName}{" "}
-            <span className="text-cyan-400">{content.lastName}</span>
+            <GradientText animationSpeed={7}>
+              {content.lastName}
+            </GradientText>
           </h1>
         </FadeIn>
 
@@ -54,12 +58,12 @@ export function Hero({ content }: HeroProps) {
         </FadeIn>
 
         <FadeIn delay={0.4} className="mt-10 flex flex-wrap gap-4">
-          <AnimatedLink
+          <SpecularLink
             href="#projetos"
-            className="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+            className="px-6 py-3 font-semibold"
           >
             {content.projectsButton}
-          </AnimatedLink>
+          </SpecularLink>
 
           <AnimatedLink
             href="#contato"

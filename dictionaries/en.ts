@@ -67,6 +67,11 @@ export const en: typeof pt = {
     title: "Solutions created for real-world problems",
     description:
       "Projects that combine development, data, and industrial knowledge.",
+    viewDashboard: "Open dashboard",
+    projectLabel: "Project",
+    carouselLabel: "Projects carousel",
+    previousProject: "Previous project",
+    nextProject: "Next project",
 
     items: {
       qualitySystem: {

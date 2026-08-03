@@ -2,6 +2,8 @@
 import { projects } from "@/data/projects";
 import type { pt } from "@/dictionaries/pt";
 import { Reveal } from "@/components/animations/Reveal";
+import { ProjectCarousel } from "@/components/projects/ProjectCarousel";
+import { ProjectCard } from "@/components/projects/ProjectCard";
 
 type ProjectsProps = {
   content: typeof pt.projects;
@@ -28,60 +30,34 @@ export function Projects({ content }: ProjectsProps) {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {projects.map((project, index) => {
-            // Usa a chave do projeto para encontrar sua tradução.
-            const projectContent = content.items[project.key];
+        <Reveal delay={0.1}>
+          <ProjectCarousel
+            previousLabel={content.previousProject}
+            nextLabel={content.nextProject}
+            carouselLabel={content.carouselLabel}
+          >
+            {projects.map((project) => {
+              // Usa a chave do projeto para encontrar sua tradução.
+              const projectContent = content.items[project.key];
 
-            return (
-              <Reveal
-                key={project.id}
-                delay={index * 0.1}
-                className={project.featured ? "lg:col-span-2" : ""}
-              >
-                <article className="group h-full overflow-hidden rounded-3xl border border-white/10 bg-slate-950 transition hover:-translate-y-1 hover:border-cyan-400/50">
-                  {/* Área que receberá uma imagem futuramente */}
-                  <div className="flex aspect-video items-end bg-gradient-to-br from-cyan-400/20 via-slate-900 to-slate-950 p-6">
-                    <div>
-                      <p className="text-sm text-cyan-400">
-                        Project {String(project.id).padStart(2, "0")}
-                      </p>
-
-                      <p className="mt-2 text-xl font-semibold">
-                        {projectContent.highlight}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="p-6 sm:p-8">
-                    <p className="text-sm font-medium text-cyan-400">
-                      {projectContent.category}
-                    </p>
-
-                    <h3 className="mt-3 text-2xl font-bold transition group-hover:text-cyan-400">
-                      {projectContent.title}
-                    </h3>
-
-                    <p className="mt-4 leading-7 text-slate-400">
-                      {projectContent.description}
-                    </p>
-
-                    <ul className="mt-6 flex flex-wrap gap-2">
-                      {project.technologies.map((technology) => (
-                        <li
-                          key={technology}
-                          className="rounded-full border border-white/10 px-3 py-1 text-sm text-slate-300"
-                        >
-                          {technology}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              </Reveal>
-            );
-          })}
-        </div>
+              return (
+                <div key={project.id}>
+                  <ProjectCard
+                    number={`${content.projectLabel} ${String(project.id).padStart(2, "0")}`}
+                    title={projectContent.title}
+                    category={projectContent.category}
+                    description={projectContent.description}
+                    highlight={projectContent.highlight}
+                    technologies={project.technologies}
+                    image={project.image}
+                    projectUrl={project.projectUrl}
+                    buttonLabel={content.viewDashboard}
+                  />
+                </div>
+              );
+            })}
+          </ProjectCarousel>
+        </Reveal>
       </div>
     </section>
   );

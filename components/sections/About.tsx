@@ -1,6 +1,7 @@
 // Importa o formato dos textos da seção.
 import type { pt } from "@/dictionaries/pt";
 import { Reveal } from "@/components/animations/Reveal";
+import styles from "./About.module.css";
 
 // Define as propriedades obrigatórias do componente.
 type AboutProps = {
@@ -11,46 +12,63 @@ export function About({ content }: AboutProps) {
   return (
     <section
       id="sobre"
-      className="border-t border-white/10 bg-slate-900/50 px-6 py-24"
+      className={styles.section}
     >
-      <Reveal className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
-        <div>
+      <div className={styles.glow} aria-hidden="true" />
+
+      <div className={styles.container}>
+        <Reveal className={styles.introduction}>
+          <div>
           {/* Texto recebido do dicionário atual */}
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
+          <p className={styles.eyebrow}>
             {content.introduction}
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className={styles.title}>
             {content.title}
           </h2>
-        </div>
+          </div>
 
-        <div>
-          <p className="text-lg leading-8 text-slate-300">
+          {/* Painel abstrato que representa tecnologia conectando áreas. */}
+          <div className={styles.visual} aria-hidden="true">
+            <div className={styles.orbit} />
+            <span className={`${styles.node} ${styles.nodeOne}`} />
+            <span className={`${styles.node} ${styles.nodeTwo}`} />
+            <span className={`${styles.node} ${styles.nodeThree}`} />
+            <strong className={styles.initials}>IF</strong>
+          </div>
+        </Reveal>
+
+        <Reveal className={styles.story} delay={0.12}>
+          <p className={styles.lead}>
             {content.firstParagraph}
           </p>
 
-          <p className="mt-6 leading-7 text-slate-400">
+          <p className={styles.paragraph}>
             {content.secondParagraph}
           </p>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className={styles.cards}>
             {/* Cria os três cartões a partir do dicionário */}
-            {content.cards.map((card) => (
+            {content.cards.map((card, index) => (
               <article
                 key={card.title}
-                className="rounded-2xl border border-white/10 bg-slate-950 p-5"
+                className={styles.card}
               >
-                <strong className="text-cyan-400">{card.title}</strong>
+                <span className={styles.cardNumber}>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-                <p className="mt-2 text-sm text-slate-400">
+                <strong className={styles.cardTitle}>{card.title}</strong>
+
+                <p className={styles.cardDescription}>
                   {card.description}
                 </p>
               </article>
             ))}
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }

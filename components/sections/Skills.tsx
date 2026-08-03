@@ -2,6 +2,8 @@
 import { skills } from "@/data/skills";
 import type { pt } from "@/dictionaries/pt";
 import { Reveal } from "@/components/animations/Reveal";
+import { LogoLoop } from "@/components/react-bits/LogoLoop";
+import { SkillFlipCard } from "@/components/technologies/SkillFlipCard";
 
 type SkillsProps = {
   content: typeof pt.skills;
@@ -23,6 +25,15 @@ export function Skills({ content }: SkillsProps) {
           <p className="max-w-md text-slate-400">{content.description}</p>
         </div>
 
+        {/* Faixa contínua com as tecnologias já cadastradas em data/skills.ts */}
+        <div className="mt-12">
+          <LogoLoop
+            items={skills.map((skill) => skill.name)}
+            duration={30}
+            ariaLabel={content.description}
+          />
+        </div>
+
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {/* 
   index representa a posição de cada cartão.
@@ -30,15 +41,10 @@ export function Skills({ content }: SkillsProps) {
 */}
           {skills.map((skill, index) => (
             <Reveal key={skill.name} delay={index * 0.08}>
-              <article className="group h-full rounded-2xl border border-white/10 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400/50">
-                <p className="text-sm text-cyan-400">
-                  {content.categories[skill.category]}
-                </p>
-
-                <h3 className="mt-3 text-xl font-semibold transition group-hover:text-cyan-400">
-                  {skill.name}
-                </h3>
-              </article>
+              <SkillFlipCard
+                name={skill.name}
+                category={content.categories[skill.category]}
+              />
             </Reveal>
           ))}
         </div>

@@ -26,17 +26,6 @@ export function Reveal({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Verifica a configuração de acessibilidade do sistema.
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    // Mostra imediatamente se o usuário desativou movimentos.
-    if (prefersReducedMotion) {
-      setIsVisible(true);
-      return;
-    }
-
     // Observa quando o elemento entra na área visível.
     const observer = new IntersectionObserver(
       ([entry]) => {

@@ -1,0 +1,135 @@
+.carousel {
+  margin-top: 3rem;
+  outline: none;
+}
+
+.carousel:focus-visible {
+  border-radius: 1.75rem;
+  box-shadow: 0 0 0 2px rgb(34 211 238 / 70%);
+}
+
+.viewport {
+  overflow: hidden;
+  padding: 1.25rem 0 2rem;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+.stage {
+  position: relative;
+  min-height: 35rem;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(72vw, 54rem);
+  transform:
+    translateX(calc(-50% + (var(--slide-offset) * min(64vw, 48rem))))
+    scale(0.86);
+  opacity: 0.22;
+  filter: saturate(0.35) blur(1px);
+  pointer-events: none;
+  transition:
+    transform 650ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    opacity 500ms ease,
+    filter 500ms ease;
+}
+
+.slide[data-active="true"] {
+  z-index: 2;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  filter: none;
+  pointer-events: auto;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.arrow {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 9999px;
+  background: rgb(15 23 42 / 75%);
+  color: #e2e8f0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.arrow:hover,
+.arrow:focus-visible {
+  border-color: #22d3ee;
+  background: rgb(34 211 238 / 12%);
+  color: #67e8f9;
+  outline: none;
+  transform: scale(1.08);
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 5rem;
+  justify-content: center;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-radius: 9999px;
+  background: #475569;
+  cursor: pointer;
+  transition:
+    width 250ms ease,
+    background-color 250ms ease;
+}
+
+.dot[data-active="true"] {
+  width: 1.75rem;
+  background: #22d3ee;
+}
+
+.dot:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .stage {
+    min-height: 31rem;
+  }
+
+  .slide {
+    width: calc(100vw - 3rem);
+    transform:
+      translateX(calc(-50% + (var(--slide-offset) * 88vw)))
+      scale(0.88);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .arrow,
+  .dot {
+    transition-duration: 1ms;
+  }
+}

@@ -67,6 +67,11 @@ export const pt = {
     title: "Soluções criadas para problemas reais",
     description:
       "Projetos que unem desenvolvimento, dados e conhecimento do ambiente industrial.",
+    viewDashboard: "Abrir dashboard",
+    projectLabel: "Projeto",
+    carouselLabel: "Carrossel de projetos",
+    previousProject: "Projeto anterior",
+    nextProject: "Próximo projeto",
 
     items: {
       qualitySystem: {
