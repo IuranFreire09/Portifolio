@@ -25,7 +25,7 @@ export function Header({ content }: HeaderProps) {
         </a>
 
         {/* Links principais — ocultos em telas pequenas */}
-        <div className={styles.links}>
+        <div className={styles.desktopLinks}>
           <a href="#sobre" className={styles.navLink}>
             {content.about}
           </a>
@@ -51,6 +51,19 @@ export function Header({ content }: HeaderProps) {
             {content.contact}
           </StarLink>
         </div>
+      </nav>
+
+      {/* Menu independente para celular: não disputa espaço com a marca e o idioma. */}
+      <nav className={styles.mobileLinks} aria-label={content.navigationLabel}>
+        <a href="#sobre" className={styles.navLink}>
+          {content.about}
+        </a>
+        <a href="#habilidades" className={styles.navLink}>
+          {content.skills}
+        </a>
+        <a href="#projetos" className={styles.navLink}>
+          {content.projects}
+        </a>
       </nav>
     </header>
   );

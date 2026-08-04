@@ -26,7 +26,8 @@
 
 .brand,
 .actions,
-.links {
+.desktopLinks,
+.mobileLinks {
   display: flex;
   align-items: center;
 }
@@ -48,13 +49,15 @@
   box-shadow: 0 0 28px rgb(34 211 238 / 22%);
 }
 
-.links {
+.desktopLinks {
   gap: 0.2rem;
   padding: 0.3rem;
   border: 1px solid rgb(255 255 255 / 8%);
   border-radius: 9999px;
   background: rgb(15 23 42 / 64%);
 }
+
+.mobileLinks { display: none; }
 
 .navLink {
   border-radius: 9999px;
@@ -101,16 +104,26 @@
     -webkit-backdrop-filter: none;
   }
 
-  .links {
+  .desktopLinks {
+    display: none;
+  }
+
+  .mobileLinks {
     position: fixed;
+    z-index: 60;
     right: 0.75rem;
     bottom: max(0.75rem, env(safe-area-inset-bottom));
     left: 0.75rem;
+    display: flex;
     justify-content: center;
     gap: 0.1rem;
     padding: 0.3rem;
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 9999px;
+    background: rgb(2 6 23 / 88%);
     box-shadow: 0 16px 45px rgb(2 6 23 / 55%);
     backdrop-filter: blur(18px);
+    pointer-events: auto;
   }
 
   .navLink {
@@ -123,6 +136,10 @@
   .brandName,
   .contact {
     display: none;
+  }
+
+  .actions {
+    margin-left: auto;
   }
 
   .monogram {
