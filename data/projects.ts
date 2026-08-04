@@ -3,7 +3,8 @@
 export type ProjectKey =
   | "qualitySystem"
   | "inventoryDashboard"
-  | "productionDashboard";
+  | "productionDashboard"
+  | "interactivePortfolio";
 
 export type Project = {
   id: number;
@@ -12,6 +13,7 @@ export type Project = {
   featured: boolean;
   image?: string;
   projectUrl?: string;
+  linkType?: "dashboard" | "repository";
 };
 
 // Aqui permanecem apenas informações que não precisam de tradução.
@@ -36,6 +38,7 @@ export const projects: Project[] = [
     image: "/projects/dashboard-estoque.png",
     projectUrl:
       "https://app.powerbi.com/view?r=eyJrIjoiMzI5MGEzMDYtNTI4My00NDRjLWFhYTMtZGZjNDc0NjIzMGI2IiwidCI6IjE5NjNjNWNlLWZjYjUtNDE0Zi1hNWJlLTM4MjM3NTgwMjg0YSIsImMiOjN9",
+    linkType: "dashboard",
   },
   {
     id: 3,
@@ -45,5 +48,14 @@ export const projects: Project[] = [
     image: "/projects/dashboard-performance-producao.png",
     projectUrl:
       "https://app.powerbi.com/view?r=eyJrIjoiY2EyZjllM2QtNDE5Yi00NDhiLTk3MzMtZTI1YjA1ZThmMTVjIiwidCI6IjE5NjNjNWNlLWZjYjUtNDE0Zi1hNWJlLTM4MjM3NTgwMjg0YSIsImMiOjN9",
+    linkType: "dashboard",
+  },
+  {
+    id: 4,
+    key: "interactivePortfolio",
+    technologies: ["TypeScript", "React", "Next.js", "CSS"],
+    featured: true,
+    projectUrl: "https://github.com/IuranFreire09/Portifolio",
+    linkType: "repository",
   },
 ];

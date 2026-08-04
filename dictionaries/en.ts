@@ -74,6 +74,7 @@ export const en: typeof pt = {
     description:
       "Projects that combine development, data, and industrial knowledge.",
     viewDashboard: "Open dashboard",
+    viewRepository: "View code on GitHub",
     projectLabel: "Project",
     carouselLabel: "Projects carousel",
     previousProject: "Previous project",
@@ -103,6 +104,14 @@ export const en: typeof pt = {
           "Dashboard for tracking production, defects, yield, fail rate, and the main issues identified for each model.",
         highlight: "Yield and defect monitoring",
       },
+
+      interactivePortfolio: {
+        title: "Interactive Portfolio",
+        category: "Front-end Development",
+        description:
+          "A bilingual, responsive portfolio built to present my journey, skills, and projects through an interactive space-inspired experience.",
+        highlight: "Digital experience and professional identity",
+      },
     },
   },
 
@@ -113,6 +122,7 @@ export const en: typeof pt = {
       "I am open to opportunities, collaborations, and projects involving development, data, and process improvement.",
     email: "Email",
     linkedin: "LinkedIn",
+    github: "GitHub",
     phone: "Phone",
   },
 

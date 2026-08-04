@@ -55,7 +55,11 @@ export function Projects({ content }: ProjectsProps) {
                     technologies={project.technologies}
                     image={project.image}
                     projectUrl={project.projectUrl}
-                    buttonLabel={content.viewDashboard}
+                    buttonLabel={
+                      project.linkType === "repository"
+                        ? content.viewRepository
+                        : content.viewDashboard
+                    }
                   />
                 </div>
               );

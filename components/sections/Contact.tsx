@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import type { pt } from "@/dictionaries/pt";
 import { Reveal } from "@/components/animations/Reveal";
@@ -28,6 +28,13 @@ export function Contact({ content }: ContactProps) {
       value: "Iuran Freire",
       href: "https://www.linkedin.com/in/iuran-freire-a23092204",
       icon: FaLinkedinIn,
+      external: true,
+    },
+    {
+      label: content.github,
+      value: "IuranFreire09",
+      href: "https://github.com/IuranFreire09",
+      icon: FaGithub,
       external: true,
     },
     {

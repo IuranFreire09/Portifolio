@@ -37,96 +37,59 @@ body {
 .site-ambience { position: fixed; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; }
 .site-content { position: relative; z-index: 1; }
 
-/* Atmosfera espacial cinematográfica: escura, silenciosa e com luz física. */
+/* Camadas luminosas lentas tornam o espaço vivo, mantendo baixo custo visual. */
 .space-nebula {
   position: absolute;
   width: clamp(22rem, 42vw, 48rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  opacity: 0.1;
-  filter: blur(110px);
+  opacity: 0.16;
+  filter: blur(90px);
   will-change: transform;
 }
 
-.space-nebula-cold {
-  bottom: -18rem;
-  left: -12rem;
-  background: radial-gradient(circle, #1d4ed8, #0e7490 28%, transparent 68%);
-  animation: nebula-drift-cold 32s ease-in-out infinite alternate;
+.space-nebula-cyan {
+  top: 8%;
+  left: -16rem;
+  background: radial-gradient(circle, #0891b2, transparent 66%);
+  animation: nebula-drift-cyan 24s ease-in-out infinite alternate;
 }
 
-.space-black-hole {
-  position: absolute;
-  top: clamp(6rem, 14vh, 10rem);
-  right: clamp(-12rem, -10vw, -5rem);
-  width: clamp(18rem, 34vw, 35rem);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 48% 48%, #000 0 43%, #01030a 53%, transparent 68%);
-  box-shadow: 0 0 5rem rgb(251 191 36 / 7%);
-  opacity: .72;
-  animation: black-hole-breathe 14s ease-in-out infinite alternate;
-  will-change: transform;
+.space-nebula-violet {
+  right: -18rem;
+  bottom: 5%;
+  background: radial-gradient(circle, #7c3aed, transparent 66%);
+  animation: nebula-drift-violet 29s ease-in-out infinite alternate;
 }
 
-.space-black-hole::before {
+.space-comet {
   position: absolute;
-  z-index: -1;
-  inset: 31% -18%;
-  border-radius: 50%;
-  content: "";
-  background:
-    radial-gradient(ellipse at center, transparent 0 37%, rgb(254 240 138 / 82%) 40%, rgb(245 158 11 / 52%) 45%, rgb(251 146 60 / 16%) 57%, transparent 67%);
-  filter: blur(2px);
-  transform: rotate(-12deg) scaleY(.54);
-  animation: accretion-turn 18s linear infinite;
-}
-
-.space-black-hole::after {
-  position: absolute;
-  inset: 7%;
-  border-top: 1px solid rgb(254 240 138 / 42%);
-  border-radius: 50%;
-  content: "";
-  filter: blur(.4px);
-  transform: rotate(-11deg) scaleY(.74);
-}
-
-.space-planet {
-  position: absolute;
-  bottom: 6vh;
-  left: -7rem;
-  width: clamp(13rem, 22vw, 24rem);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 69% 32%, #475569 0 3%, #172033 18%, #060b16 51%, #000 72%);
-  box-shadow: inset -2rem -2rem 4rem #000, 1rem -1rem 3rem rgb(125 211 252 / 7%);
-  opacity: .4;
-  animation: planet-drift 26s ease-in-out infinite alternate;
-}
-
-.space-dust {
-  position: absolute;
-  inset: 0;
-  opacity: .11;
-  background-image:
-    radial-gradient(circle, #fff 0 .55px, transparent .8px),
-    radial-gradient(circle, #fef3c7 0 .45px, transparent .75px);
-  background-position: 7px 13px, 41px 57px;
-  background-size: 97px 97px, 137px 137px;
-  animation: dust-drift 45s linear infinite;
+  top: 24%;
+  left: -14rem;
+  width: 11rem;
+  height: 1px;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgb(103 232 249 / 75%), #fff);
+  box-shadow: 5rem 0 1.2rem rgb(34 211 238 / 28%);
+  transform: rotate(-18deg);
+  animation: comet-crossing 15s ease-in-out infinite 4s;
 }
 
 /* Breves reflexos cromáticos inspirados no Special Text da referência. */
-.hero-special-name { position: relative; isolation: isolate; }
+.hero-special-name {
+  position: relative;
+  isolation: isolate;
+  text-shadow: -1px 0 rgb(34 211 238 / 32%), 1px 0 rgb(167 139 250 / 28%);
+}
 .hero-special-name::before,
 .hero-special-name::after {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   inset: 0;
   content: attr(data-text);
   opacity: 0;
   pointer-events: none;
+  mix-blend-mode: screen;
 }
 .hero-special-name::before { color: #22d3ee; transform: translateX(-2px); }
 .hero-special-name::after { color: #a78bfa; transform: translateX(2px); }
@@ -147,11 +110,13 @@ body {
   93% { opacity: 0; clip-path: inset(100% 0 0 0); }
 }
 
-@keyframes nebula-drift-cold { to { transform: translate(22vw, -12vh) scale(1.16); } }
-@keyframes black-hole-breathe { to { transform: translate(-1.5rem, 1rem) scale(1.035); opacity: .84; } }
-@keyframes accretion-turn { to { transform: rotate(348deg) scaleY(.54); } }
-@keyframes planet-drift { to { transform: translate(2rem, -1.5rem) rotate(3deg); } }
-@keyframes dust-drift { to { background-position: 104px 110px, 178px 194px; } }
+@keyframes nebula-drift-cyan { to { transform: translate(28vw, 18vh) scale(1.14); } }
+@keyframes nebula-drift-violet { to { transform: translate(-24vw, -20vh) scale(1.18); } }
+@keyframes comet-crossing {
+  0%, 68%, 100% { opacity: 0; transform: translateX(0) rotate(-18deg); }
+  72% { opacity: .8; }
+  86% { opacity: 0; transform: translateX(calc(100vw + 28rem)) rotate(-18deg); }
+}
 
 /* A fonte de destaque cria uma identidade consistente nas áreas principais. */
 h1,
@@ -253,10 +218,7 @@ section {
   }
 
   .space-nebula,
-  .space-black-hole,
-  .space-black-hole::before,
-  .space-planet,
-  .space-dust,
+  .space-comet,
   .hero-special-name::before,
   .hero-special-name::after {
     animation: none;
@@ -264,10 +226,8 @@ section {
 }
 
 @media (max-width: 640px) {
-  .space-nebula { opacity: .07; filter: blur(75px); }
-  .space-black-hole { top: 9rem; right: -10rem; width: 20rem; opacity: .42; }
-  .space-planet { display: none; }
-  .space-dust { opacity: .07; }
+  .space-nebula { opacity: .1; filter: blur(70px); }
+  .space-comet { display: none; }
   .hero-special-name::before { transform: translateX(-1px); }
   .hero-special-name::after { transform: translateX(1px); }
 }

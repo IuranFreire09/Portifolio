@@ -73,6 +73,7 @@ export const pt = {
     description:
       "Projetos que unem desenvolvimento, dados e conhecimento do ambiente industrial.",
     viewDashboard: "Abrir dashboard",
+    viewRepository: "Ver código no GitHub",
     projectLabel: "Projeto",
     carouselLabel: "Carrossel de projetos",
     previousProject: "Projeto anterior",
@@ -102,6 +103,14 @@ export const pt = {
           "Dashboard para acompanhar produção, defeitos, yield, fail rate e os principais problemas encontrados em cada modelo.",
         highlight: "Monitoramento de yield e defeitos",
       },
+
+      interactivePortfolio: {
+        title: "Portfólio Interativo",
+        category: "Desenvolvimento Front-end",
+        description:
+          "Portfólio bilíngue e responsivo desenvolvido para apresentar minha trajetória, habilidades e projetos em uma experiência espacial interativa.",
+        highlight: "Experiência digital e identidade profissional",
+      },
     },
   },
 
@@ -112,6 +121,7 @@ export const pt = {
       "Estou aberto a oportunidades, colaborações e projetos relacionados a desenvolvimento, dados e melhoria de processos.",
     email: "E-mail",
     linkedin: "LinkedIn",
+    github: "GitHub",
     phone: "Telefone",
   },
 

@@ -8,7 +8,7 @@
 .description { max-width: 43rem; margin: 1.4rem auto 0; color: #94a3b8; font-size: clamp(1rem,2vw,1.15rem); line-height: 1.7; }
 .portalStation { position: relative; width: min(100%,46rem); margin: 3.5rem auto 0; border: 1px solid rgb(148 163 184 / 13%); border-radius: 2rem; padding: 2rem; background: linear-gradient(135deg,rgb(15 23 42 / 72%),rgb(2 6 23 / 62%)); box-shadow: 0 0 5rem rgb(99 102 241 / 14%),inset 0 1px 0 rgb(255 255 255 / 6%); backdrop-filter: blur(14px); font-style: normal; }
 .portalStation::before { position: absolute; z-index: -1; inset: -.8rem; content: ""; border-radius: 2.6rem; background: radial-gradient(ellipse at center,rgb(139 92 246 / 22%),transparent 70%); filter: blur(20px); }
-.portalList { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+.portalList { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
 .portalLink { display: flex; min-width: 0; flex-direction: column; align-items: center; color: #cbd5e1; outline: none; }
 .portal { position: relative; display: grid; width: 5.5rem; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px solid rgb(103 232 249 / 20%); border-radius: 50%; background: radial-gradient(circle at center,#000 0 30%,#01030b 42%,rgb(15 23 42 / 82%) 58%,#020617 72%); box-shadow: inset 0 0 2.2rem #000,inset 0 0 .8rem rgb(103 232 249 / 12%),0 0 1.2rem rgb(2 6 23 / 70%); transition: transform 600ms cubic-bezier(.22,1,.36,1),border-color 400ms ease,box-shadow 500ms ease; }
 .portal::before { position: absolute; inset: -42%; content: ""; background: conic-gradient(from 0deg,transparent 0 20%,#22d3ee 29%,transparent 39% 58%,#a855f7 67%,#f0abfc 72%,transparent 82%); opacity: .72; filter: blur(2px); animation: portalSpin 6s linear infinite; }
@@ -26,7 +26,7 @@
   .section { min-height: auto; padding: 5rem 1rem 6rem; }
   .portalStation { margin-top: 2.5rem; padding: 1.4rem .75rem; }
   .portalList { gap: .4rem; }
-  .portal { width: 4.4rem; }
+  .portal { width: 3.8rem; }
   .label { font-size: .82rem; }
   .value { display: none; }
 }
