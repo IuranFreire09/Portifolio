@@ -84,8 +84,8 @@ export const pt = {
         title: "Sistema de Gestão da Qualidade",
         category: "Desenvolvimento Full Stack",
         description:
-          "Aplicação web para digitalizar inspeções IQC e OQC, controlar planos de amostragem, rastreabilidade e geração de relatórios.",
-        highlight: "Inspeções IQC e OQC",
+          "Aplicação full stack para gerenciar planos e inspeções de qualidade, digitalizar registros IQC e OQC, acompanhar indicadores e gerar relatórios.",
+        highlight: "Planos e inspeções de qualidade",
       },
 
       inventoryDashboard: {
@@ -104,12 +104,12 @@ export const pt = {
         highlight: "Monitoramento de yield e defeitos",
       },
 
-      interactivePortfolio: {
-        title: "Portfólio Interativo",
-        category: "Desenvolvimento Front-end",
+      barcodeCam: {
+        title: "BarcodeCam — Leitor de Códigos",
+        category: "Automação e Visão Computacional",
         description:
-          "Portfólio bilíngue e responsivo desenvolvido para apresentar minha trajetória, habilidades e projetos em uma experiência espacial interativa.",
-        highlight: "Experiência digital e identidade profissional",
+          "Aplicação em Python que utiliza a câmera para reconhecer códigos de barras de S/N e MAC, validar as leituras, armazená-las em SQLite e exportar os registros para Excel.",
+        highlight: "Leitura automatizada com câmera",
       },
     },
   },

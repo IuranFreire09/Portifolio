@@ -4,7 +4,7 @@ export type ProjectKey =
   | "qualitySystem"
   | "inventoryDashboard"
   | "productionDashboard"
-  | "interactivePortfolio";
+  | "barcodeCam";
 
 export type Project = {
   id: number;
@@ -25,10 +25,12 @@ export const projects: Project[] = [
       "Vue 3",
       "Node.js",
       "Express",
-      "PostgreSQL",
       "Pinia",
+      "Dexie",
     ],
     featured: true,
+    projectUrl: "https://github.com/Iuran-Freire/Quality-System-",
+    linkType: "repository",
   },
   {
     id: 2,
@@ -52,10 +54,10 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    key: "interactivePortfolio",
-    technologies: ["TypeScript", "React", "Next.js", "CSS"],
+    key: "barcodeCam",
+    technologies: ["Python", "Flask", "OpenCV", "SQLite", "Pyzbar"],
     featured: true,
-    projectUrl: "https://github.com/IuranFreire09/Portifolio",
+    projectUrl: "https://github.com/Iuran-Freire/BarcodeCam",
     linkType: "repository",
   },
 ];

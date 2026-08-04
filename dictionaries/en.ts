@@ -85,8 +85,8 @@ export const en: typeof pt = {
         title: "Quality Management System",
         category: "Full Stack Development",
         description:
-          "Web application for digitizing IQC and OQC inspections, managing sampling plans, traceability, and report generation.",
-        highlight: "IQC and OQC inspections",
+          "Full-stack application for managing quality plans and inspections, digitizing IQC and OQC records, tracking indicators, and generating reports.",
+        highlight: "Quality plans and inspections",
       },
 
       inventoryDashboard: {
@@ -105,12 +105,12 @@ export const en: typeof pt = {
         highlight: "Yield and defect monitoring",
       },
 
-      interactivePortfolio: {
-        title: "Interactive Portfolio",
-        category: "Front-end Development",
+      barcodeCam: {
+        title: "BarcodeCam — Barcode Reader",
+        category: "Automation and Computer Vision",
         description:
-          "A bilingual, responsive portfolio built to present my journey, skills, and projects through an interactive space-inspired experience.",
-        highlight: "Digital experience and professional identity",
+          "Python application that uses a camera to recognize S/N and MAC barcodes, validate readings, store them in SQLite, and export records to Excel.",
+        highlight: "Automated camera-based reading",
       },
     },
   },

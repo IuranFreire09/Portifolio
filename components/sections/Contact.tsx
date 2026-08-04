@@ -32,8 +32,8 @@ export function Contact({ content }: ContactProps) {
     },
     {
       label: content.github,
-      value: "IuranFreire09",
-      href: "https://github.com/IuranFreire09",
+      value: "Iuran-Freire",
+      href: "https://github.com/Iuran-Freire",
       icon: FaGithub,
       external: true,
     },
