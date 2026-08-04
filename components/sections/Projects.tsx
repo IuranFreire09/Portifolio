@@ -13,7 +13,7 @@ export function Projects({ content }: ProjectsProps) {
   return (
     <section
       id="projetos"
-      className="border-t border-white/10 bg-slate-900/50 px-6 py-24"
+      className="border-t border-white/10 bg-slate-900/50 px-4 py-20 sm:px-6 sm:py-24"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal className="max-w-3xl">
@@ -21,7 +21,7 @@ export function Projects({ content }: ProjectsProps) {
             {content.introduction}
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mt-4 text-[1.9rem] font-bold leading-tight tracking-tight sm:text-5xl">
             {content.title}
           </h2>
 

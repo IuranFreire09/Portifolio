@@ -87,3 +87,27 @@
   }
 }
 
+@media (max-width: 480px) {
+  .card,
+  .inner {
+    min-height: 8.5rem;
+  }
+
+  .face {
+    padding: 1rem;
+  }
+
+  .category {
+    font-size: 0.72rem;
+  }
+
+  .name,
+  .backName {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

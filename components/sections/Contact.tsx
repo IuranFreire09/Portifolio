@@ -8,20 +8,20 @@ type ContactProps = {
 
 export function Contact({ content }: ContactProps) {
   return (
-    <section id="contato" className="px-6 py-24">
+    <section id="contato" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
-        <Reveal className="overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-slate-900 to-slate-950 p-8 sm:p-12 lg:p-16">
-          <div className="grid gap-12 lg:grid-c'ls-2 lg:items-end">
+        <Reveal className="overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-slate-900 to-slate-950 p-5 sm:p-12 lg:p-16">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
                 {content.introduction}
               </p>
 
-              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
+              <h2 className="mt-4 text-[1.9rem] font-bold leading-tight tracking-tight sm:text-5xl">
                 {content.title}
               </h2>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-400 sm:mt-6 sm:text-lg sm:leading-8">
                 {content.description}
               </p>
             </div>
@@ -31,14 +31,14 @@ export function Contact({ content }: ContactProps) {
                 <li>
                   <a
                     href="mailto:Iuranhumberto99@gmail.com"
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-400/50"
+                    className="flex min-w-0 items-center justify-between gap-3 rounded-2xl border border-white/10 bg-slate-950/70 p-4 transition hover:border-cyan-400/50 sm:p-5"
                   >
                     <span>
                       <span className="block text-sm text-slate-500">
                         {content.email}
                       </span>
 
-                      <span className="mt-1 block font-medium text-slate-200">
+                      <span className="mt-1 block break-all text-sm font-medium text-slate-200 sm:text-base">
                         Iuranhumberto99@gmail.com
                       </span>
                     </span>
@@ -54,7 +54,7 @@ export function Contact({ content }: ContactProps) {
                     href="https://www.linkedin.com/in/iuran-freire-a23092204"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-400/50"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-slate-950/70 p-4 transition hover:border-cyan-400/50 sm:p-5"
                   >
                     <span>
                       <span className="block text-sm text-slate-500">
@@ -75,7 +75,7 @@ export function Contact({ content }: ContactProps) {
                 <li>
                   <a
                     href="tel:+5592985923140"
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-400/50"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-slate-950/70 p-4 transition hover:border-cyan-400/50 sm:p-5"
                   >
                     <span>
                       <span className="block text-sm text-slate-500">

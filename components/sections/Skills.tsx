@@ -11,14 +11,14 @@ type SkillsProps = {
 
 export function Skills({ content }: SkillsProps) {
   return (
-    <section id="habilidades" className="px-6 py-24">
+    <section id="habilidades" className="px-5 py-20 sm:px-6 sm:py-24">
       <Reveal>
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
           {content.introduction}
         </p>
 
         <div className="mt-4 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="max-w-2xl text-[1.9rem] font-bold leading-tight tracking-tight sm:text-5xl">
             {content.title}
           </h2>
 
@@ -34,7 +34,7 @@ export function Skills({ content }: SkillsProps) {
           />
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
           {/* 
   index representa a posição de cada cartão.
   Ele permite aumentar levemente o atraso de cada animação.

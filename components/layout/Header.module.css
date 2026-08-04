@@ -111,20 +111,28 @@
   .nav {
     min-height: 3.6rem;
     padding: 0.35rem;
+    /* O filtro criava uma referência local para o menu fixo inferior. */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .links {
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+    right: 0.75rem;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    left: 0.75rem;
     justify-content: center;
+    gap: 0.1rem;
+    padding: 0.3rem;
     box-shadow: 0 16px 45px rgb(2 6 23 / 55%);
     backdrop-filter: blur(18px);
   }
 
   .navLink {
-    padding-inline: clamp(0.75rem, 5vw, 1.35rem);
+    flex: 1;
+    padding: 0.6rem clamp(0.5rem, 3vw, 1rem);
+    text-align: center;
+    font-size: 0.78rem;
   }
 
   .brandName,
@@ -135,5 +143,11 @@
   .monogram {
     width: 2.75rem;
     height: 2.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navLink {
+    font-size: 0.72rem;
   }
 }

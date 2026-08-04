@@ -22,27 +22,31 @@ export const pt = {
 
   about: {
     introduction: "Sobre mim",
-    title: "Tecnologia conectada ao ambiente industrial",
-    firstParagraph:
-      "Sou estudante de Análise e Desenvolvimento de Sistemas, com formação técnica em Automação Industrial e interesse em análise de dados, Business Intelligence e melhoria de processos.",
-    secondParagraph:
-      "Desenvolvo dashboards e soluções digitais utilizando Power BI, Excel e tecnologias web. Meu objetivo é transformar informações operacionais em análises claras, apoiando decisões e aumentando a eficiência dos processos.",
-
-    // Os cartões também fazem parte do conteúdo traduzido.
-    cards: [
+    title: "Minha trajetória, ponto a ponto",
+    summary:
+      "Uma jornada construída entre dados, automação e desenvolvimento — sempre conectando problemas reais a soluções práticas.",
+    journey: [
       {
-        title: "Formação",
-        description: "ADS e Automação Industrial",
+        label: "O começo",
+        title: "Dados que ganharam forma",
+        description:
+          "Minha trajetória começou com a criação de dashboards no Power BI, transformando informações em análises mais claras e úteis.",
       },
       {
-        title: "Especialidade",
-        description: "Dados e Business Intelligence",
+        label: "A expansão",
+        title: "Novas ferramentas, novas possibilidades",
+        description:
+          "Ampliei meus conhecimentos em Python, Excel, SQL e desenvolvimento web para organizar informações, melhorar a rastreabilidade e reduzir tarefas manuais.",
       },
       {
-        title: "Objetivo",
-        description: "Melhorar processos com tecnologia",
+        label: "Hoje",
+        title: "Desenvolvedor em evolução",
+        description:
+          "Sou desenvolvedor júnior e estudante de Análise e Desenvolvimento de Sistemas, com interesse em software, dados e automação de processos.",
       },
     ],
+    closing:
+      "Gosto de compreender o problema antes de construir a solução. Sou curioso, dedicado e comprometido em aprender e criar projetos que gerem resultados reais.",
   },
 
   skills: {

@@ -10,7 +10,7 @@ export function Footer({ content }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 px-6 py-8">
+    <footer className="border-t border-white/10 px-5 pb-8 pt-8 sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
         <p>
           © {currentYear} Iuran Freire. {content.rights}

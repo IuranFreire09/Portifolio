@@ -114,12 +114,20 @@
 }
 
 @media (max-width: 640px) {
+  .carousel {
+    margin-top: 2rem;
+  }
+
+  .viewport {
+    padding-top: 0.5rem;
+  }
+
   .stage {
-    min-height: 31rem;
+    min-height: 35rem;
   }
 
   .slide {
-    width: calc(100vw - 3rem);
+    width: calc(100vw - 2rem);
     transform:
       translateX(calc(-50% + (var(--slide-offset) * 88vw)))
       scale(0.88);

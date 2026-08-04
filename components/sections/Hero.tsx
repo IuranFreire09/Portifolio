@@ -28,16 +28,16 @@ export function Hero({ content }: HeroProps) {
       </div>
 
       {/* Mantém o conteúdo acima do fundo animado */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-5 pb-28 pt-32 sm:px-6 sm:py-24">
         {/* Cada FadeIn controla o momento de entrada do elemento */}
         <FadeIn>
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-cyan-400 sm:text-sm sm:tracking-[0.3em]">
             {content.introduction}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="mt-4 text-5xl font-bold tracking-tight sm:text-7xl">
+          <h1 className="mt-4 text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-7xl">
             {content.firstName}{" "}
             <GradientText animationSpeed={7}>
               {content.lastName}
@@ -46,28 +46,28 @@ export function Hero({ content }: HeroProps) {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <h2 className="mt-6 text-2xl font-medium text-slate-300 sm:text-3xl">
+          <h2 className="mt-5 text-xl font-medium leading-snug text-slate-300 sm:mt-6 sm:text-3xl">
             {content.role}
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:mt-6 sm:text-lg sm:leading-8">
             {content.description}
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.4} className="mt-10 flex flex-wrap gap-4">
+        <FadeIn delay={0.4} className="mt-8 flex flex-col gap-3 min-[420px]:flex-row sm:mt-10 sm:gap-4">
           <SpecularLink
             href="#projetos"
-            className="px-6 py-3 font-semibold"
+            className="justify-center px-6 py-3 text-center font-semibold"
           >
             {content.projectsButton}
           </SpecularLink>
 
           <AnimatedLink
             href="#contato"
-            className="rounded-full border border-slate-700 px-6 py-3 font-semibold transition hover:border-cyan-400 hover:text-cyan-400"
+            className="w-full rounded-full border border-slate-700 px-6 py-3 text-center font-semibold transition hover:border-cyan-400 hover:text-cyan-400 min-[420px]:w-auto"
           >
             {content.contactButton}
           </AnimatedLink>

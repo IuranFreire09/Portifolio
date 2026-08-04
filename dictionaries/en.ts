@@ -24,26 +24,31 @@ export const en: typeof pt = {
 
   about: {
     introduction: "About me",
-    title: "Technology connected to the industrial environment",
-    firstParagraph:
-      "I am a Systems Analysis and Development student with a technical background in Industrial Automation and an interest in data analysis, Business Intelligence, and process improvement.",
-    secondParagraph:
-      "I develop dashboards and digital solutions using Power BI, Excel, and web technologies. My goal is to transform operational information into clear analysis that supports decisions and increases process efficiency.",
-
-    cards: [
+    title: "My journey, point by point",
+    summary:
+      "A journey built across data, automation, and development — always connecting real problems to practical solutions.",
+    journey: [
       {
-        title: "Education",
-        description: "Systems Development and Industrial Automation",
+        label: "The beginning",
+        title: "Data taking shape",
+        description:
+          "My journey began by creating Power BI dashboards, transforming information into clearer, more useful analysis.",
       },
       {
-        title: "Specialty",
-        description: "Data and Business Intelligence",
+        label: "The expansion",
+        title: "New tools, new possibilities",
+        description:
+          "I expanded my knowledge of Python, Excel, SQL, and web development to organize information, improve traceability, and reduce manual tasks.",
       },
       {
-        title: "Goal",
-        description: "Improve processes through technology",
+        label: "Today",
+        title: "A developer in constant evolution",
+        description:
+          "I am a junior developer and a Systems Analysis and Development student interested in software, data, and process automation.",
       },
     ],
+    closing:
+      "I like to understand the problem before building the solution. I am curious, dedicated, and committed to learning and creating projects that deliver real results.",
   },
 
   skills: {
