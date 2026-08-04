@@ -1,7 +1,9 @@
 .section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(to bottom,rgb(2 6 23 / 42%),rgb(5 11 29 / 68%) 16rem,rgb(5 11 29 / 62%));
+  background:
+    radial-gradient(circle at 34% 52%, rgb(34 211 238 / 5%), transparent 32rem),
+    rgb(2 6 23 / 42%);
   padding: clamp(5rem, 9vw, 8rem) 1.25rem;
 }
 

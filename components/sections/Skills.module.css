@@ -2,7 +2,9 @@
   position: relative;
   overflow: hidden;
   padding: clamp(5rem, 9vw, 8rem) 1.25rem;
-  background: linear-gradient(to bottom,rgb(5 11 29 / 62%),rgb(2 6 23 / 58%) 18rem,rgb(2 6 23 / 52%));
+  background:
+    radial-gradient(circle at 50% 54%, rgb(99 102 241 / 5%), transparent 34rem),
+    rgb(2 6 23 / 42%);
 }
 
 .stars {

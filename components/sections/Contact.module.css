@@ -1,6 +1,6 @@
-.section { position: relative; min-height: 42rem; overflow: hidden; padding: 7rem 1rem 6rem; background: rgb(2 6 23 / 34%); }
-.section::before { position: absolute; z-index: 1; top: 0; right: 0; left: 0; height: 17rem; content: ""; background: linear-gradient(to bottom,var(--space-surface),rgb(5 11 29 / 72%) 36%,transparent); pointer-events: none; }
-.section::after { position: absolute; z-index: 1; inset: 0; content: ""; background: radial-gradient(circle at 50% 68%,rgb(30 41 59 / 10%),transparent 28rem),linear-gradient(to bottom,rgb(2 6 23 / 18%),transparent 48%,rgb(2 6 23 / 44%)); pointer-events: none; }
+.section { position: relative; min-height: 42rem; overflow: hidden; padding: 7rem 1rem 6rem; background: rgb(2 6 23 / 42%); }
+.section::before { position: absolute; z-index: 1; inset: 0; content: ""; background: radial-gradient(ellipse at 50% 58%,rgb(99 102 241 / 7%),transparent 31rem); pointer-events: none; }
+.section::after { position: absolute; z-index: 1; inset: 0; content: ""; background: radial-gradient(circle at 50% 68%,rgb(30 41 59 / 10%),transparent 28rem); pointer-events: none; }
 .content { position: relative; z-index: 2; width: min(100%,68rem); margin: 0 auto; text-align: center; }
 .introduction { color: #22d3ee; font-size: .78rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; }
 .title { max-width: 52rem; margin: 1rem auto 0; color: #f8fafc; font-size: clamp(2.2rem,6vw,4.5rem); font-weight: 780; line-height: 1.04; letter-spacing: -.04em; }
