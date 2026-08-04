@@ -3,8 +3,10 @@
 
 /* Variáveis globais de cores */
 :root {
-  --background: #020617;
+  --background: #040a1a;
   --foreground: #f8fafc;
+  --space-surface: #050b1d;
+  --space-deep: #020617;
 }
 
 /* Disponibiliza as variáveis para o Tailwind */

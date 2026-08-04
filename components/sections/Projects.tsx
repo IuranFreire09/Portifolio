@@ -4,6 +4,7 @@ import type { pt } from "@/dictionaries/pt";
 import { Reveal } from "@/components/animations/Reveal";
 import { ProjectCarousel } from "@/components/projects/ProjectCarousel";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+import styles from "./Projects.module.css";
 
 type ProjectsProps = {
   content: typeof pt.projects;
@@ -13,9 +14,9 @@ export function Projects({ content }: ProjectsProps) {
   return (
     <section
       id="projetos"
-      className="border-t border-white/10 bg-slate-900/50 px-4 py-20 sm:px-6 sm:py-24"
+      className={`${styles.section} px-4 py-20 sm:px-6 sm:py-24`}
     >
-      <div className="mx-auto max-w-6xl">
+      <div className={`${styles.content} mx-auto max-w-6xl`}>
         <Reveal className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
             {content.introduction}
@@ -43,6 +44,7 @@ export function Projects({ content }: ProjectsProps) {
               return (
                 <div key={project.id}>
                   <ProjectCard
+                    projectId={project.id}
                     number={`${content.projectLabel} ${String(project.id).padStart(2, "0")}`}
                     title={projectContent.title}
                     category={projectContent.category}

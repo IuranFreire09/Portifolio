@@ -1,8 +1,8 @@
 .section {
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgb(255 255 255 / 8%);
-  background: #080f20;
+  background:
+    linear-gradient(to bottom, #020617 0, var(--space-surface) 16rem, var(--space-surface) 100%);
   padding: clamp(5rem, 9vw, 8rem) 1.25rem;
 }
 
@@ -10,12 +10,12 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle, rgb(103 232 249 / 25%) 1px, transparent 1.5px),
-    radial-gradient(circle, rgb(129 140 248 / 17%) 1px, transparent 1.5px);
+    radial-gradient(circle, rgb(103 232 249 / 17%) 1px, transparent 1.5px),
+    radial-gradient(circle, rgb(129 140 248 / 11%) 1px, transparent 1.5px);
   background-position: 0 0, 29px 37px;
   background-size: 57px 57px, 83px 83px;
   content: "";
-  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 24%, black 76%, transparent);
   pointer-events: none;
 }
 
@@ -118,7 +118,7 @@
   place-items: center;
   border: 1px solid rgb(103 232 249 / 45%);
   border-radius: 50%;
-  background: #080f20;
+  background: var(--space-surface);
   box-shadow: 0 0 24px rgb(34 211 238 / 22%);
 }
 

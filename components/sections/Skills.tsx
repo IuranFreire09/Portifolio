@@ -1,54 +1,90 @@
-// Importa a lista de tecnologias.
+"use client";
+
+import { useState, type CSSProperties } from "react";
+import { Reveal } from "@/components/animations/Reveal";
+import { TechnologyIcon } from "@/components/technologies/TechnologyIcon";
 import { skills } from "@/data/skills";
 import type { pt } from "@/dictionaries/pt";
-import { Reveal } from "@/components/animations/Reveal";
-import { LogoLoop } from "@/components/react-bits/LogoLoop";
-import { SkillFlipCard } from "@/components/technologies/SkillFlipCard";
+import { SynapseCanvas } from "./SynapseCanvas";
+import styles from "./Skills.module.css";
 
 type SkillsProps = {
   content: typeof pt.skills;
 };
 
 export function Skills({ content }: SkillsProps) {
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+
   return (
-    <section id="habilidades" className="px-5 py-20 sm:px-6 sm:py-24">
-      <Reveal>
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
-          {content.introduction}
-        </p>
+    <section id="habilidades" className={styles.section}>
+      <div className={styles.stars} aria-hidden="true" />
 
-        <div className="mt-4 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <h2 className="max-w-2xl text-[1.9rem] font-bold leading-tight tracking-tight sm:text-5xl">
-            {content.title}
-          </h2>
+      <div className={styles.container}>
+        <Reveal className={styles.heading}>
+          <p className={styles.eyebrow}>{content.introduction}</p>
+          <h2 className={styles.title}>{content.title}</h2>
+          <p className={styles.description}>{content.description}</p>
+        </Reveal>
 
-          <p className="max-w-md text-slate-400">{content.description}</p>
-        </div>
+        <Reveal delay={0.15} className={styles.galaxyWrapper}>
+          <div className={styles.galaxy}>
+            <SynapseCanvas />
 
-        {/* Faixa contínua com as tecnologias já cadastradas em data/skills.ts */}
-        <div className="mt-12">
-          <LogoLoop
-            items={skills.map((skill) => skill.name)}
-            duration={30}
-            ariaLabel={content.description}
-          />
-        </div>
+            {/* Órbitas decorativas que representam áreas de conhecimento. */}
+            <span className={`${styles.orbit} ${styles.orbitOuter}`} aria-hidden="true" />
+            <span className={`${styles.orbit} ${styles.orbitMiddle}`} aria-hidden="true" />
+            <span className={`${styles.orbit} ${styles.orbitInner}`} aria-hidden="true" />
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
-          {/* 
-  index representa a posição de cada cartão.
-  Ele permite aumentar levemente o atraso de cada animação.
-*/}
-          {skills.map((skill, index) => (
-            <Reveal key={skill.name} delay={index * 0.08}>
-              <SkillFlipCard
-                name={skill.name}
-                category={content.categories[skill.category]}
-              />
-            </Reveal>
-          ))}
-        </div>
-      </Reveal>
+            <div
+              className={`${styles.core} ${selectedSkill ? styles.coreSelected : ""}`}
+              aria-live="polite"
+              aria-label={selectedSkill ?? "Iuran Freire"}
+            >
+              <span className={styles.coreGlow} aria-hidden="true" />
+              {selectedSkill ? (
+                <TechnologyIcon
+                  key={selectedSkill}
+                  name={selectedSkill}
+                  className={styles.coreIcon}
+                />
+              ) : (
+                <strong className={styles.coreInitials}>IF</strong>
+              )}
+            </div>
+
+            {/* Todas as tecnologias giram juntas, mantendo os textos na posição correta. */}
+            <div className={styles.orbitingLayer}>
+              {skills.map((skill, index) => (
+                <div
+                  key={skill.name}
+                  className={styles.planet}
+                  style={{ "--skill-angle": `${index * 45}deg` } as CSSProperties}
+                >
+                  <button
+                    type="button"
+                    className={`${styles.planetContent} ${
+                      selectedSkill === skill.name ? styles.planetSelected : ""
+                    }`}
+                    onClick={() => setSelectedSkill(skill.name)}
+                    aria-pressed={selectedSkill === skill.name}
+                    aria-label={`${skill.name}: ${content.categories[skill.category]}`}
+                  >
+                    <span className={styles.iconShell}>
+                      <TechnologyIcon name={skill.name} className={styles.icon} />
+                    </span>
+                    <span className={styles.skillName}>{skill.name}</span>
+                    <span className={styles.category}>
+                      {content.categories[skill.category]}
+                    </span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className={styles.hint}>{content.orbitHint}</p>
+        </Reveal>
+      </div>
     </section>
   );
 }

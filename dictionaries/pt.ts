@@ -54,6 +54,7 @@ export const pt = {
     title: "Ferramentas que transformam dados em soluções",
     description:
       "Tecnologias utilizadas na criação de dashboards, análises e aplicações para o ambiente industrial.",
+    orbitHint: "Selecione uma tecnologia para levá-la ao centro da galáxia.",
 
     // Traduções das categorias usadas em data/skills.ts.
     categories: {

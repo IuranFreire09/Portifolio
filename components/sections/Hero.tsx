@@ -1,9 +1,9 @@
 // Componentes reutilizáveis responsáveis pelas animações.
-import { AnimatedLink } from "@/components/animations/AnimatedLink";
 import { FadeIn } from "@/components/animations/FadeIn";
 import DotField from "@/components/react-bits/DotField";
 import { GradientText } from "@/components/react-bits/GradientText";
 import { SpecularLink } from "@/components/react-bits/SpecularLink";
+import { StarLink } from "@/components/ui/StarLink";
 
 import type { pt } from "@/dictionaries/pt";
 
@@ -65,12 +65,12 @@ export function Hero({ content }: HeroProps) {
             {content.projectsButton}
           </SpecularLink>
 
-          <AnimatedLink
+          <StarLink
             href="#contato"
-            className="w-full rounded-full border border-slate-700 px-6 py-3 text-center font-semibold transition hover:border-cyan-400 hover:text-cyan-400 min-[420px]:w-auto"
+            className="w-full px-6 py-3 text-center font-semibold min-[420px]:w-auto"
           >
             {content.contactButton}
-          </AnimatedLink>
+          </StarLink>
         </FadeIn>
       </div>
     </section>

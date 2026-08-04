@@ -56,6 +56,7 @@ export const en: typeof pt = {
     title: "Tools that transform data into solutions",
     description:
       "Technologies used to create dashboards, analysis, and applications for industrial environments.",
+    orbitHint: "Select a technology to bring it to the center of the galaxy.",
 
     categories: {
       businessIntelligence: "Business Intelligence",

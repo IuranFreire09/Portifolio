@@ -80,25 +80,10 @@
 }
 
 .contact {
-  border: 1px solid rgb(34 211 238 / 30%);
-  border-radius: 9999px;
+  min-height: auto;
   padding: 0.65rem 1rem;
-  background: rgb(34 211 238 / 8%);
-  color: #e2e8f0;
   font-size: 0.875rem;
   font-weight: 650;
-  transition:
-    color 220ms ease,
-    background-color 220ms ease,
-    border-color 220ms ease;
-}
-
-.contact:hover,
-.contact:focus-visible {
-  border-color: #22d3ee;
-  background: #22d3ee;
-  color: #020617;
-  outline: none;
 }
 
 @media (max-width: 767px) {

@@ -32,8 +32,8 @@
   transform:
     translateX(calc(-50% + (var(--slide-offset) * min(64vw, 48rem))))
     scale(0.86);
-  opacity: 0.22;
-  filter: saturate(0.35) blur(1px);
+  opacity: 0;
+  filter: saturate(0.35) blur(3px);
   pointer-events: none;
   transition:
     transform 650ms cubic-bezier(0.2, 0.75, 0.25, 1),
@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .arrow {
@@ -84,33 +84,79 @@
 }
 
 .dots {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  min-width: 5rem;
+  gap: 1rem;
+  min-width: 8rem;
   justify-content: center;
 }
 
-.dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 0;
-  border-radius: 9999px;
-  background: #475569;
-  cursor: pointer;
-  transition:
-    width 250ms ease,
-    background-color 250ms ease;
+/* Rota que conecta os mundos do carrossel. */
+.dots::before {
+  position: absolute;
+  z-index: 0;
+  right: 0.55rem;
+  left: 0.55rem;
+  height: 1px;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    rgb(34 211 238 / 18%),
+    rgb(103 232 249 / 72%) 48%,
+    rgb(167 139 250 / 42%)
+  );
+  box-shadow: 0 0 0.8rem rgb(34 211 238 / 34%);
 }
 
+/* Pequeno pulso de energia viajando entre os planetas. */
+.dots::after {
+  position: absolute;
+  z-index: 1;
+  left: 0.45rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  content: "";
+  border-radius: 50%;
+  background: #cffafe;
+  box-shadow: 0 0 0.8rem #22d3ee, 0 0 1.4rem #22d3ee;
+  animation: travelOrbit 3.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dot {
+  position: relative;
+  z-index: 2;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1px solid rgb(103 232 249 / 28%);
+  border-radius: 9999px;
+  background: radial-gradient(circle at 32% 28%,#cffafe 0 8%,#0891b2 30%,#164e63 62%,#020617 100%);
+  box-shadow: 0 0 1rem rgb(34 211 238 / 12%);
+  cursor: pointer;
+  transition:
+    transform 350ms cubic-bezier(.22,1,.36,1),
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.dot:nth-child(2) { background: radial-gradient(circle at 32% 28%,#dbeafe 0 8%,#2563eb 32%,#172554 68%,#020617); }
+.dot:nth-child(3) { background: radial-gradient(circle at 32% 28%,#f3e8ff 0 8%,#9333ea 32%,#3b0764 68%,#020617); }
+
 .dot[data-active="true"] {
-  width: 1.75rem;
-  background: #22d3ee;
+  border-color: #67e8f9;
+  box-shadow: 0 0 1.5rem rgb(34 211 238 / 55%);
+  transform: scale(1.55);
 }
 
 .dot:focus-visible {
   outline: 2px solid #67e8f9;
   outline-offset: 3px;
+}
+
+@keyframes travelOrbit {
+  0%, 100% { transform: translateX(0) scale(0.75); opacity: 0.35; }
+  50% { transform: translateX(6.7rem) scale(1.15); opacity: 1; }
 }
 
 @media (max-width: 640px) {
@@ -122,9 +168,7 @@
     padding-top: 0.5rem;
   }
 
-  .stage {
-    min-height: 35rem;
-  }
+  .stage { min-height: 43rem; }
 
   .slide {
     width: calc(100vw - 2rem);
@@ -140,4 +184,6 @@
   .dot {
     transition-duration: 1ms;
   }
+
+  .dots::after { animation: none; }
 }

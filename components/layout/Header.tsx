@@ -1,5 +1,6 @@
 // Importa o seletor de idiomas.
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { StarLink } from "@/components/ui/StarLink";
 import type { pt } from "@/dictionaries/pt";
 import styles from "./Header.module.css";
 
@@ -43,12 +44,12 @@ export function Header({ content }: HeaderProps) {
           {/* Envia a descrição traduzida para o seletor */}
           <LanguageSwitcher label={content.languageLabel} />
 
-          <a
+          <StarLink
             href="#contato"
             className={styles.contact}
           >
             {content.contact}
-          </a>
+          </StarLink>
         </div>
       </nav>
     </header>

@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import type { CSSProperties, MouseEvent } from "react";
 import styles from "./ProjectCard.module.css";
 
 type ProjectCardProps = {
+  projectId: number;
   number: string;
   title: string;
   category: string;
@@ -15,6 +19,7 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({
+  projectId,
   number,
   title,
   category,
@@ -26,32 +31,60 @@ export function ProjectCard({
   buttonLabel,
   className = "",
 }: ProjectCardProps) {
+  const moveHighlight = (event: MouseEvent<HTMLDivElement>) => {
+    const panel = event.currentTarget;
+    const bounds = panel.getBoundingClientRect();
+    const x = event.clientX - bounds.left;
+    const y = event.clientY - bounds.top;
+    const rotateY = ((x / bounds.width) - 0.5) * 5;
+    const rotateX = ((y / bounds.height) - 0.5) * -5;
+
+    panel.style.setProperty("--spot-x", `${x}px`);
+    panel.style.setProperty("--spot-y", `${y}px`);
+    panel.style.setProperty("--tilt-x", `${rotateX}deg`);
+    panel.style.setProperty("--tilt-y", `${rotateY}deg`);
+  };
+
+  const resetHighlight = (event: MouseEvent<HTMLDivElement>) => {
+    event.currentTarget.style.setProperty("--tilt-x", "0deg");
+    event.currentTarget.style.setProperty("--tilt-y", "0deg");
+  };
+
   return (
     <article
       className={`${styles.card} ${className}`}
+      data-project={projectId}
       tabIndex={0}
       aria-label={`${title}: ${description}`}
     >
-      {/* Agora existe apenas uma face: os detalhes aparecem suavemente. */}
       <div className={styles.surface}>
-        {image ? (
-          <Image
-            src={image}
-            alt=""
-            fill
-            // O Vinext serve estes arquivos locais diretamente.
-            // Isso evita passar pelo otimizador de imagens do Next.
-            unoptimized
-            sizes="(max-width: 640px) 100vw, 864px"
-            className={styles.image}
-          />
-        ) : (
-          <div className={styles.imageFallback} aria-hidden="true" />
-        )}
+        <div className={styles.world} aria-hidden="true">
+          <span className={styles.orbit} />
+          <span className={styles.moon} />
+          <div className={styles.planet}>
+            {image ? (
+              <Image src={image} alt="" fill unoptimized sizes="(max-width: 640px) 240px, 320px" className={styles.image} />
+            ) : (
+              <div className={styles.imageFallback} />
+            )}
+            <span className={styles.atmosphere} />
+          </div>
+          <span className={styles.shadow} />
+        </div>
 
-        <div className={styles.overlay} aria-hidden="true" />
-
-        <div className={styles.content}>
+        <div
+          className={styles.content}
+          onMouseMove={moveHighlight}
+          onMouseLeave={resetHighlight}
+          style={
+            {
+              "--spot-x": "50%",
+              "--spot-y": "50%",
+              "--tilt-x": "0deg",
+              "--tilt-y": "0deg",
+            } as CSSProperties
+          }
+        >
           <div className={styles.heading}>
             <div className={styles.labels}>
               <p className={styles.number}>{number}</p>
