@@ -51,6 +51,7 @@ export function Projects({ content }: ProjectsProps) {
                     title={projectContent.title}
                     category={projectContent.category}
                     description={projectContent.description}
+                    features={projectContent.features}
                     highlight={projectContent.highlight}
                     technologies={project.technologies}
                     image={project.image}

@@ -21,14 +21,14 @@
 
 .stage {
   position: relative;
-  min-height: 35rem;
+  min-height: 43rem;
 }
 
 .slide {
   position: absolute;
   top: 0;
   left: 50%;
-  width: min(72vw, 54rem);
+  width: min(88vw, 68rem);
   transform:
     translateX(calc(-50% + (var(--slide-offset) * min(64vw, 48rem))))
     scale(0.86);
@@ -168,7 +168,7 @@
     padding-top: 0.5rem;
   }
 
-  .stage { min-height: 43rem; }
+  .stage { min-height: 54rem; }
 
   .slide {
     width: calc(100vw - 2rem);

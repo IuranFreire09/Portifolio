@@ -85,6 +85,11 @@ export const pt = {
         category: "Desenvolvimento Full Stack",
         description:
           "Aplicação full stack para gerenciar planos e inspeções de qualidade, digitalizar registros IQC e OQC, acompanhar indicadores e gerar relatórios.",
+        features: [
+          "Centraliza planos, amostragens e registros de inspeção em uma única interface.",
+          "Organiza indicadores de aprovação, reprovação e desempenho da qualidade.",
+          "Projeto construído com front-end Vue e serviços em Node.js.",
+        ],
         highlight: "Planos e inspeções de qualidade",
       },
 
@@ -93,6 +98,10 @@ export const pt = {
         category: "Business Intelligence",
         description:
           "Dashboard para monitoramento de materiais não conformes, impacto financeiro, movimentações e variação mensal do estoque.",
+        features: [
+          "Acompanha custos, volumes e movimentações de materiais.",
+          "Facilita a análise mensal e a identificação de desvios.",
+        ],
         highlight: "Controle financeiro e operacional",
       },
 
@@ -101,6 +110,10 @@ export const pt = {
         category: "Análise de Dados",
         description:
           "Dashboard para acompanhar produção, defeitos, yield, fail rate e os principais problemas encontrados em cada modelo.",
+        features: [
+          "Relaciona produção, qualidade e principais defeitos.",
+          "Apoia decisões com indicadores de yield e fail rate.",
+        ],
         highlight: "Monitoramento de yield e defeitos",
       },
 
@@ -109,6 +122,11 @@ export const pt = {
         category: "Automação e Visão Computacional",
         description:
           "Aplicação em Python que utiliza a câmera para reconhecer códigos de barras de S/N e MAC, validar as leituras, armazená-las em SQLite e exportar os registros para Excel.",
+        features: [
+          "Captura e associa automaticamente os códigos S/N e MAC pela câmera.",
+          "Valida as leituras antes de salvar os registros em uma base SQLite.",
+          "Disponibiliza histórico pela interface web e exportação para Excel.",
+        ],
         highlight: "Leitura automatizada com câmera",
       },
     },

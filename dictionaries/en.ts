@@ -86,6 +86,11 @@ export const en: typeof pt = {
         category: "Full Stack Development",
         description:
           "Full-stack application for managing quality plans and inspections, digitizing IQC and OQC records, tracking indicators, and generating reports.",
+        features: [
+          "Centralizes plans, sampling, and inspection records in one interface.",
+          "Organizes approval, rejection, and quality performance indicators.",
+          "Built with a Vue front end and Node.js services.",
+        ],
         highlight: "Quality plans and inspections",
       },
 
@@ -94,6 +99,10 @@ export const en: typeof pt = {
         category: "Business Intelligence",
         description:
           "Dashboard for monitoring non-conforming materials, financial impact, inventory movements, and monthly cost variation.",
+        features: [
+          "Tracks material costs, volumes, and movements.",
+          "Makes monthly analysis and deviation detection easier.",
+        ],
         highlight: "Financial and operational control",
       },
 
@@ -102,6 +111,10 @@ export const en: typeof pt = {
         category: "Data Analysis",
         description:
           "Dashboard for tracking production, defects, yield, fail rate, and the main issues identified for each model.",
+        features: [
+          "Connects production, quality, and leading defects.",
+          "Supports decisions with yield and fail-rate indicators.",
+        ],
         highlight: "Yield and defect monitoring",
       },
 
@@ -110,6 +123,11 @@ export const en: typeof pt = {
         category: "Automation and Computer Vision",
         description:
           "Python application that uses a camera to recognize S/N and MAC barcodes, validate readings, store them in SQLite, and export records to Excel.",
+        features: [
+          "Automatically captures and pairs S/N and MAC codes through the camera.",
+          "Validates readings before storing records in a SQLite database.",
+          "Provides a web history view and Excel export.",
+        ],
         highlight: "Automated camera-based reading",
       },
     },

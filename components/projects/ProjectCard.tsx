@@ -10,6 +10,7 @@ type ProjectCardProps = {
   title: string;
   category: string;
   description: string;
+  features: string[];
   highlight: string;
   technologies: string[];
   image?: string;
@@ -24,6 +25,7 @@ export function ProjectCard({
   title,
   category,
   description,
+  features,
   highlight,
   technologies,
   image,
@@ -97,6 +99,12 @@ export function ProjectCard({
 
           <div className={styles.details}>
             <p className={styles.description}>{description}</p>
+
+            <ul className={styles.features}>
+              {features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
 
             <ul className={styles.technologies}>
               {technologies.map((technology) => (
