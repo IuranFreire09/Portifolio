@@ -55,11 +55,12 @@ export default async function Home({ params }: PageProps) {
       <div className="site-stars" aria-hidden="true">
         <Stars global />
       </div>
-      {/* Névoas e rastros dão profundidade ao espaço sem esconder o conteúdo. */}
+      {/* Elementos cinematográficos criam profundidade sem competir com o conteúdo. */}
       <div className="site-ambience" aria-hidden="true">
-        <span className="space-nebula space-nebula-cyan" />
-        <span className="space-nebula space-nebula-violet" />
-        <span className="space-comet" />
+        <span className="space-black-hole" />
+        <span className="space-nebula space-nebula-cold" />
+        <span className="space-planet" />
+        <span className="space-dust" />
       </div>
       {/* Envia os textos traduzidos para o cabeçalho */}
       <Header content={dictionary.header} />
