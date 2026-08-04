@@ -37,7 +37,10 @@ export function Hero({ content }: HeroProps) {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="mt-4 text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-7xl">
+          <h1
+            className="hero-special-name mt-4 inline-block text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-7xl"
+            data-text={`${content.firstName} ${content.lastName}`}
+          >
             {content.firstName}{" "}
             <GradientText animationSpeed={7}>
               {content.lastName}

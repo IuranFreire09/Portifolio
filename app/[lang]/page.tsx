@@ -55,6 +55,12 @@ export default async function Home({ params }: PageProps) {
       <div className="site-stars" aria-hidden="true">
         <Stars global />
       </div>
+      {/* Névoas e rastros dão profundidade ao espaço sem esconder o conteúdo. */}
+      <div className="site-ambience" aria-hidden="true">
+        <span className="space-nebula space-nebula-cyan" />
+        <span className="space-nebula space-nebula-violet" />
+        <span className="space-comet" />
+      </div>
       {/* Envia os textos traduzidos para o cabeçalho */}
       <Header content={dictionary.header} />
 
