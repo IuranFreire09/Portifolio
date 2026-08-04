@@ -3,7 +3,6 @@ import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import type { pt } from "@/dictionaries/pt";
 import { Reveal } from "@/components/animations/Reveal";
-import { Stars } from "@/components/react-bits/Stars";
 import styles from "./Contact.module.css";
 
 type ContactProps = { content: typeof pt.contact };
@@ -42,7 +41,6 @@ export function Contact({ content }: ContactProps) {
 
   return (
     <section id="contato" className={styles.section}>
-      <Stars />
       <Reveal className={styles.content}>
         <p className={styles.introduction}>{content.introduction}</p>
         <h2 className={styles.title}>{content.title}</h2>

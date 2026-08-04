@@ -5,7 +5,9 @@ import styles from "./Stars.module.css";
 
 type Star = { x: number; y: number; size: number; depth: number; phase: number };
 
-export function Stars() {
+type StarsProps = { global?: boolean };
+
+export function Stars({ global = false }: StarsProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -96,5 +98,5 @@ export function Stars() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />;
+  return <canvas ref={canvasRef} className={`${styles.canvas} ${global ? styles.global : ""}`} aria-hidden="true" />;
 }

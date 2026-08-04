@@ -4,6 +4,7 @@ import type { pt } from "@/dictionaries/pt";
 import { Reveal } from "@/components/animations/Reveal";
 import { ProjectCarousel } from "@/components/projects/ProjectCarousel";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+import { Astronaut } from "@/components/ui/Astronaut";
 import styles from "./Projects.module.css";
 
 type ProjectsProps = {
@@ -16,6 +17,7 @@ export function Projects({ content }: ProjectsProps) {
       id="projetos"
       className={`${styles.section} px-4 py-20 sm:px-6 sm:py-24`}
     >
+      <Astronaut />
       <div className={`${styles.content} mx-auto max-w-6xl`}>
         <Reveal className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">

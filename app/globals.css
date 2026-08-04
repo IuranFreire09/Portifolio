@@ -32,6 +32,10 @@ body {
   font-feature-settings: "kern", "liga";
 }
 
+.site-shell { position: relative; isolation: isolate; background: transparent; }
+.site-stars { position: fixed; z-index: -2; inset: 0; pointer-events: none; }
+.site-content { position: relative; z-index: 1; }
+
 /* A fonte de destaque cria uma identidade consistente nas áreas principais. */
 h1,
 h2,

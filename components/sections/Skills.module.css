@@ -2,16 +2,13 @@
   position: relative;
   overflow: hidden;
   padding: clamp(5rem, 9vw, 8rem) 1.25rem;
-  background:
-    linear-gradient(to bottom, var(--space-surface), var(--space-deep) 18rem, var(--space-deep));
+  background: linear-gradient(to bottom,rgb(5 11 29 / 62%),rgb(2 6 23 / 58%) 18rem,rgb(2 6 23 / 52%));
 }
 
 .stars {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle, rgb(103 232 249 / 14%) 1px, transparent 1.5px),
-    radial-gradient(circle, rgb(129 140 248 / 9%) 1px, transparent 1.5px);
+  background-image: none;
   background-position: 12px 18px, 37px 49px;
   background-size: 61px 61px, 91px 91px;
   mask-image: radial-gradient(circle at center, black 36%, transparent 82%);

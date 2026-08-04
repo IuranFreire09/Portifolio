@@ -8,6 +8,7 @@ import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
+import { Stars } from "@/components/react-bits/Stars";
 import { getDictionary, hasLanguage } from "@/dictionaries";
 import type { Metadata } from "next";
 
@@ -50,11 +51,14 @@ export default async function Home({ params }: PageProps) {
   const dictionary = getDictionary(lang);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="site-shell min-h-screen text-white">
+      <div className="site-stars" aria-hidden="true">
+        <Stars global />
+      </div>
       {/* Envia os textos traduzidos para o cabeçalho */}
       <Header content={dictionary.header} />
 
-      <main>
+      <main className="site-content">
         {/* Envia os textos selecionados para o componente Hero */}
         <Hero content={dictionary.hero} />
 

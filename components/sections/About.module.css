@@ -1,17 +1,14 @@
 .section {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(to bottom, #020617 0, var(--space-surface) 16rem, var(--space-surface) 100%);
+  background: linear-gradient(to bottom,rgb(2 6 23 / 42%),rgb(5 11 29 / 68%) 16rem,rgb(5 11 29 / 62%));
   padding: clamp(5rem, 9vw, 8rem) 1.25rem;
 }
 
 .section::before {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle, rgb(103 232 249 / 17%) 1px, transparent 1.5px),
-    radial-gradient(circle, rgb(129 140 248 / 11%) 1px, transparent 1.5px);
+  background-image: none;
   background-position: 0 0, 29px 37px;
   background-size: 57px 57px, 83px 83px;
   content: "";

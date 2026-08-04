@@ -2,17 +2,17 @@
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(to bottom, var(--space-deep), transparent 18rem),
+    linear-gradient(to bottom, rgb(2 6 23 / 52%), transparent 18rem),
     radial-gradient(circle at 14% 48%, rgb(34 211 238 / 5%), transparent 28rem),
     radial-gradient(circle at 88% 70%, rgb(139 92 246 / 6%), transparent 30rem),
-    var(--space-surface);
+    rgb(5 11 29 / 48%);
 }
 
 .section::before {
   position: absolute;
   inset: 0;
   content: "";
-  opacity: 0.2;
+  opacity: 0;
   pointer-events: none;
   background-image:
     radial-gradient(circle, rgb(103 232 249 / 70%) 0 1px, transparent 1.3px),
